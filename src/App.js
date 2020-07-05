@@ -9,9 +9,9 @@ const App = () => {
   return (
     <div className="container">
       <Container maxWidth="md">
-        <Page />
         <Search />
         <CharactersList />
+        <Page />
       </Container>
     </div>
   );

@@ -8,6 +8,7 @@
 
 .container {
   margin: auto;
-  background: #23424a;
+  background: #31373d;
   height: 100vh;
+  color: white;
 }

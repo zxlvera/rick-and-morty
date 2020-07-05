@@ -4,12 +4,15 @@ import Pagination from "@material-ui/lab/Pagination";
 import { RickMortyContext } from "../context/";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    color: "red",
-  },
-    page: {
-     color:"red",
-    }
+  pages: {
+    backgroundColor: '#dadada',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '1rem 0',
+    padding: '1rem',
+    transform: 'scale(1.1)',
+  }
 }));
 
 const Page = () => {
@@ -20,7 +23,7 @@ const Page = () => {
   return (
     <div>
       <Pagination
-        classes={classes.page}
+        className={classes.pages}
         count={info.pages}
         color="primary"
         size="large"
