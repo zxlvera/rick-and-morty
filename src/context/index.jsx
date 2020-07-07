@@ -32,9 +32,16 @@ const RickMortyProvider = (props) => {
 
   const fetchPage = (page) => {
     let query = `${url}/?page=${page}`;
-    console.log(query);
     fetchData(query);
   };
+
+  const searchChars = (key, name) => {
+    let query = `${url}/?name=${name}`
+    console.log(query);
+    if (key === 'Enter' ) {
+      fetchData(query)
+    } 
+  }
 
   return (
     <RickMortyContext.Provider
@@ -43,6 +50,7 @@ const RickMortyProvider = (props) => {
         data,
         fetchPage,
         isLoading,
+        searchChars,
       }}
     >
       {props.children}

@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Box from '@material-ui/core/Box'
 import Pagination from "@material-ui/lab/Pagination";
+import PaginationItem from '@material-ui/lab/PaginationItem';
 import { RickMortyContext } from "../context/";
 
 const useStyles = makeStyles((theme) => ({
-  pages: {
-    backgroundColor: '#dadada',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: '1rem 0',
-    padding: '1rem',
-    transform: 'scale(1.1)',
+  root: {
+    background: 'white',
+    opacity: '80%',
+  },
+  ul: {
   }
 }));
 
@@ -21,15 +20,21 @@ const Page = () => {
   const { info, fetchPage } = appContext;
 
   return (
-    <div>
+    <Box ml={30} py={2}>
       <Pagination
-        className={classes.pages}
+        classes={{
+          root: classes.root,
+          ul: classes.ul,
+        }}
         count={info.pages}
-        color="primary"
-        size="large"
+        color="secondary"
+        size="medium"
+        variant="outlined"
+        boundaryCount={2}
         onChange={(event, page) => fetchPage(page)}
-      />
-    </div>
+      ></Pagination>
+      <PaginationItem className={classes.root} color='primary' />
+    </Box>
   );
 };
 

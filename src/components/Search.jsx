@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
+import { RickMortyContext } from '../context/'
 
 const useStyles = makeStyles((theme) => ({
   search: {
@@ -40,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Search = () => {
   const classes = useStyles();
+  const appContext = useContext(RickMortyContext)
+  const { searchChars } = appContext;
+
   return (
     <Toolbar>
       <div className={classes.search}>
@@ -47,12 +51,15 @@ const Search = () => {
           <SearchIcon />
         </div>
         <InputBase
-          placeholder="Search..."
+          onKeyUp={(e) => {
+            e.preventDefault()
+            searchChars(e.key, e.target.value)}}
+          placeholder="Search Characters"
           classes={{
             root: classes.inputRoot,
             input: classes.inputInput,
           }}
-          fullWidth="true"
+          fullWidth={true}
           inputProps={{ "aria-label": "search" }}
         />
       </div>

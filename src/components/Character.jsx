@@ -22,7 +22,7 @@ const Character = ({ name, image }) => {
   return (
     <div>
       <GridListTile key={image} className={classes.root}>
-        <img src={image} alt={name}></img>
+        <img src={image} alt={name} title={name}></img>
         <GridListTileBar title={name}></GridListTileBar>
       </GridListTile>
     </div>

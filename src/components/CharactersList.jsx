@@ -2,13 +2,15 @@ import React, { useContext } from "react";
 import { RickMortyContext } from "../context";
 import Character from "./Character";
 import { makeStyles } from "@material-ui/core/styles";
+import Box from '@material-ui/core/Box';
 import GridList from "@material-ui/core/GridList";
 
 const useStyles = makeStyles((theme) => ({
-  gridList: {
+  root: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-around",
+    justifyContent: "flex-start",
+    alignItems: "flex-end",
     overflow: "hidden",
   },
 }));
@@ -19,7 +21,8 @@ const CharactersList = () => {
   const { data } = appContext;
 
   return (
-    <GridList className={classes.gridList} >
+    <Box mx={5}>
+    <GridList className={classes.root} >
       {data.map((char) => (
         <Character
           key={char.id}
@@ -28,6 +31,7 @@ const CharactersList = () => {
         ></Character>
       ))}
     </GridList>
+    </Box>
   );
 };
 
