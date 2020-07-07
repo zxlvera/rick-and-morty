@@ -8,11 +8,10 @@ import Page from "./components/Page"
 
 const App = () => {
   return (
-    <div className="container">
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Typography
           align='center'
-          variant='h1'
+          variant='h3'
           gutterBottom={true}
         >
           Rick and Morty
@@ -21,7 +20,6 @@ const App = () => {
         <Page />
         <CharactersList />
       </Container>
-    </div>
   );
 };
 

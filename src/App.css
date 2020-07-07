@@ -6,8 +6,11 @@
   box-sizing: border-box;
 }
 
-.container {
-  margin: auto;
+html {
   background: #292929;
+}
+
+body {
+  height: 100vh;
   color: white;
 }
