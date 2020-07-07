@@ -4,8 +4,9 @@ import { GridListTile, GridListTileBar } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "8rem",
-    height: "8rem",
+    height: '10rem',
+    width: '10rem',
+    objectFit: 'cover',
     margin: "1rem",
     transition: 'transform 0.5s',
     '&:hover': {
@@ -20,12 +21,10 @@ const Character = ({ name, image }) => {
   const classes = useStyles();
 
   return (
-    <div>
       <GridListTile key={image} className={classes.root}>
-        <img src={image} alt={name} title={name}></img>
+        <img src={image} alt={name} title={name} ></img>
         <GridListTileBar title={name}></GridListTileBar>
       </GridListTile>
-    </div>
   );
 };
 

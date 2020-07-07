@@ -18,8 +18,8 @@ const App = () => {
           Rick and Morty
           </Typography>
         <Search />
-        <CharactersList />
         <Page />
+        <CharactersList />
       </Container>
     </div>
   );

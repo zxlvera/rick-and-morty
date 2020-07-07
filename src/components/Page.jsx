@@ -7,11 +7,8 @@ import { RickMortyContext } from "../context/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: 'white',
-    opacity: '80%',
+
   },
-  ul: {
-  }
 }));
 
 const Page = () => {
@@ -20,12 +17,11 @@ const Page = () => {
   const { info, fetchPage } = appContext;
 
   return (
-    <Box ml={30} py={2}>
+    <Box mx={10}>
       <Pagination
-        classes={{
-          root: classes.root,
-          ul: classes.ul,
-        }}
+        className={
+          classes.root
+       }
         count={info.pages}
         color="secondary"
         size="medium"
@@ -33,8 +29,7 @@ const Page = () => {
         boundaryCount={2}
         onChange={(event, page) => fetchPage(page)}
       ></Pagination>
-      <PaginationItem className={classes.root} color='primary' />
-    </Box>
+     </Box>
   );
 };
 
