@@ -7,7 +7,6 @@ import { RickMortyContext } from "../context/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: 'white',
     opacity: '80%',
   },
   ul: {
