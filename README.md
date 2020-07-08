@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-[Imgur](https://i.imgur.com/H5KkNjV.png)
+![Web page](https://i.imgur.com/H5KkNjV.png)
 
 ## Rick and Morty API
 
